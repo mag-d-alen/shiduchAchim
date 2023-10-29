@@ -1,0 +1,118 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  top: 45%;
+  left: 25%;
+}
+
+.spinner-element {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin: 0;
+  animation: spinScale 2s infinite linear;
+}
+
+.color1 {
+  background-color: #f37b21;
+}
+.color2 {
+  background-color: #ecc41b;
+}
+.color3 {
+  background-color: #5ebd70;
+}
+.color4 {
+  background-color: #36c6f4;
+}
+.color5 {
+  background-color: #bc58dd;
+}
+.color6 {
+  background-color: #e31e36;
+}
+
+.spinner-element:nth-child(1) {
+  --rotation-deg: 0deg;
+}
+
+.spinner-element:nth-child(2) {
+  --rotation-deg: 30deg;
+}
+
+.spinner-element:nth-child(3) {
+  --rotation-deg: 60deg;
+}
+
+.spinner-element:nth-child(4) {
+  --rotation-deg: 90deg;
+}
+
+.spinner-element:nth-child(5) {
+  --rotation-deg: 120deg;
+}
+
+.spinner-element:nth-child(6) {
+  --rotation-deg: 150deg;
+}
+
+.spinner-element:nth-child(7) {
+  --rotation-deg: 180deg;
+}
+
+.spinner-element:nth-child(8) {
+  --rotation-deg: 210deg;
+}
+
+.spinner-element:nth-child(9) {
+  --rotation-deg: 240deg;
+}
+
+.spinner-element:nth-child(10) {
+  --rotation-deg: 270deg;
+}
+
+.spinner-element:nth-child(11) {
+  --rotation-deg: 300deg;
+}
+
+.spinner-element:nth-child(12) {
+  --rotation-deg: 330deg;
+}
+
+@keyframes spinSpinner {
+  0% {
+    transform: rotate(0deg) translate(50%, 50%);
+  }
+  100% {
+    transform: rotate(360deg) translate(50%, 50%);
+  }
+}
+
+@keyframes spinScale {
+  0%,
+  100% {
+    transform: scale(1) rotate(var(--rotation-deg)) translate(11px);
+    opacity: 0.4;
+  }
+  50% {
+    transform: scale(1) rotate(var(--rotation-deg)) translate(45px);
+    opacity: 0.8;
+  }
+}
+
+html {
+  visibility: visible;
+  opacity: 1;
+}
