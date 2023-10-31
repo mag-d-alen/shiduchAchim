@@ -2,13 +2,13 @@ import { RefObject } from 'react'
 import { useDataContext } from '../DataContext'
 import { Button } from "./common/Button"
 
-export const ResulRowDetails = ({ contentSpace, height, content="content" }: { contentSpace: RefObject<HTMLDivElement>, height: string, content:string }) => {
+export const ResultRowDetails = ({ contentSpace, height, content="content" }: { contentSpace: RefObject<HTMLDivElement>, height: string, content?:string }) => {
     const {selected} = useDataContext() 
     return (
         <div
             ref={contentSpace}
             style={{ maxHeight: `${height}` }}
-            className=" bg-white border-b border-slate-300 overflow-auto transition-max-height duration-700 ease-in-out"
+            className=" bg-white border-b border-slate-300 overflow-auto transition-max-height duration-700 ease-in-out overflow-hidden"
         >
             <div className="flex pb-10 justify-between align-center px-4">
                 <div>{content}</div>

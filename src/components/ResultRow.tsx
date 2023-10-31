@@ -1,15 +1,16 @@
 import { useRef, useState } from "react"
-import { ShiuchRequestType } from "../types"
-import { ShiuchDetails } from "./ShiuchDetails"
 import { ToggleButton } from "./common/ToggleButton"
 import { GridRow } from "./common/GridRow"
+import { ResultRowDetails } from "./ResultRowDetails"
+import { ShiduchInstanceType } from "../types"
 
-export const ResultRow = ({ result }: { result: {key:string, value:string}}) => {
+export const ResultRow = ({ result }: { result: ShiduchInstanceType}) => {
   const [active, setActive] = useState(false)
   const [height, setHeight] = useState('0px')
   const [rotate, setRotate] = useState('transform duration-700 ease')
 
   const contentSpace = useRef<HTMLDivElement>(null)
+  const displayResult = (({ id, ...rest }) => rest)(result) 
 
   function toggleDetails() {
     setActive((prevState) => !prevState)
@@ -21,10 +22,10 @@ export const ResultRow = ({ result }: { result: {key:string, value:string}}) => 
   return (
     <>
       <div className={`grid grid-cols-5 text-sm text-right rounded-lg `}>
-        {Object.entries(result).map(item=><GridRow text={item.toString()}/>)}
+        {Object.values(displayResult).map(item=> <GridRow text={item.toString()}/>)}
         <ToggleButton clickHandler={toggleDetails} rotate={rotate} />
       </div>
-      <ShiuchDetails contentSpace={contentSpace} height={height} />
+      <ResultRowDetails contentSpace={contentSpace} height={height}/>
     </>
   )
 }

@@ -1,6 +1,6 @@
 
 import Select from 'react-select'
-import { DropdownIndicator } from "../DropdownIndicator"
+import { DropdownIndicator } from "./DropdownIndicator"
 import { options } from '../../constants'
 
 
