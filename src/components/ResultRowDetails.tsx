@@ -13,10 +13,12 @@ export const ResultRowDetails = ({ contentSpace, height, content="content" }: { 
             <div className="flex pb-10 justify-between align-center px-4">
                 <div>{content}</div>
                {selected ==='new' ?<div className='flex gap-8 px-4'>
-                <Button intent={"primary"}>accept</Button>
-                <Button intent={"destroy"}>reject</Button>
+                <Button color="primary" text='accept'/>
+                <Button color="destroy" text="reject" />
                     {/* <button className='roundButton color6 text-white'>accept</button>
-                    <button className='roundButton'>reject</button> */}
+                    <button className='roundButton'>reject</button> 
+                    <Button variant={"destroy"}/>{"reject"}</Button>*/}
+
                 </div>: null}
             </div>
         </div>
