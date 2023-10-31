@@ -2,15 +2,15 @@ import { useRef, useState } from "react"
 import { ToggleButton } from "./common/ToggleButton"
 import { GridRow } from "./common/GridRow"
 import { ResultRowDetails } from "./ResultRowDetails"
-import { ShiduchInstanceType } from "../types"
+import { ShiuchInstanceType } from "../types"
 
-export const ResultRow = ({ result }: { result: ShiduchInstanceType }) => {
+export const ResultRow = ({ result }: { result: ShiuchInstanceType }) => {
   const [active, setActive] = useState(false)
   const [height, setHeight] = useState('0px')
   const [rotate, setRotate] = useState('transform duration-700 ease')
 
   const contentSpace = useRef<HTMLDivElement>(null)
-  const displayResult = (({ id, ...rest }) => rest)(result)
+const displayResult = (({ id, ...rest }) => rest)(result)
 
   function toggleDetails() {
     setActive((prevState) => !prevState)
