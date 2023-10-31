@@ -1,4 +1,4 @@
-export type ShiduchInstanceType ={
+export type ShiuchInstanceType ={
     id:number,
     name:string,
     phone:string,
