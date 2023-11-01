@@ -1,7 +1,6 @@
 
 import "./styles/main.css"
 import "./styles/app.css"
-
 import {
   createBrowserRouter,
   createRoutesFromElements,
@@ -9,39 +8,22 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import { ShiuchAchimPage } from "./components/ShiuchAchimPage";
-import { DataProvider } from "./DataContext";
-import { QueryClient, QueryClientProvider } from "react-query";
+import { AcceptedShiuchRequests } from "./components/pages/AcceptedShiuchRequests";
+import { RejectedShiuchRequests } from "./components/pages/RejectedShiuchRequests";
+import { SuggestedShiuchim } from "./components/pages/SuggestedShiuchim";
+import { NewShiuchRequests } from "./components/pages/NewShiuchRequests";
+import {  kidsLoader, newRequestsLoader } from "./constants";
 
 export const App = () => {
-  const queryClient = new QueryClient()
-
   const router = createBrowserRouter(createRoutesFromElements(
-    <Route path="/">
-      <Route index element={<ShiuchAchimPage />} />
+    <Route path="/"  element={<ShiuchAchimPage />} >
+      <Route path="/new" index element={<NewShiuchRequests/>} loader={newRequestsLoader}  />
+      <Route path="/approved" index element={<AcceptedShiuchRequests/>} loader={newRequestsLoader} />
+      <Route path="/rejected" index element={<RejectedShiuchRequests/>} loader={newRequestsLoader} />
+      <Route path="/suggestions" index element={<SuggestedShiuchim />} loader={kidsLoader} />
     </Route>))
-
-  return (
-    <QueryClientProvider client={queryClient}>
-      <DataProvider>
-        <RouterProvider router={router} />
-      </DataProvider>
-    </QueryClientProvider>
-
-  )
+  return <RouterProvider router={router} />
 }
 
 export default App
 
-
-// export const App = () => {
-//   const router = createBrowserRouter(createRoutesFromElements(
-
-//     <Route path="/">
-//       <Route index element={<ShiuchAchimPage />} />
-//     </Route>))
-
-//   return (
-//     <RouterProvider router={router} />
-//   </QueryClientProvider>
-//   )
-// }

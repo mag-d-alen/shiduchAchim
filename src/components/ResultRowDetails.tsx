@@ -1,9 +1,9 @@
 import { RefObject } from 'react'
-import { useDataContext } from '../DataContext'
 import { Button } from "./common/Button"
+import { useLocation } from 'react-router-dom'
 
 export const ResultRowDetails = ({ contentSpace, height, content="content" }: { contentSpace: RefObject<HTMLDivElement>, height: string, content?:string }) => {
-    const {selected} = useDataContext() 
+    const {pathname} = useLocation()
     return (
         <div
             ref={contentSpace}
@@ -12,13 +12,9 @@ export const ResultRowDetails = ({ contentSpace, height, content="content" }: { 
         >
             <div className="flex pb-10 justify-between align-center px-4">
                 <div>{content}</div>
-               {selected ==='new' ?<div className='flex gap-8 px-4'>
-                <Button color="primary" text='accept'/>
-                <Button color="destroy" text="reject" />
-                    {/* <button className='roundButton color6 text-white'>accept</button>
-                    <button className='roundButton'>reject</button> 
-                    <Button variant={"destroy"}/>{"reject"}</Button>*/}
-
+               {pathname =='/new' ?<div className='flex gap-8 px-4'>
+                <Button intent={"primary"}>accept</Button>
+                <Button intent={"destroy"}>reject</Button> 
                 </div>: null}
             </div>
         </div>

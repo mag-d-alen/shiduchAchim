@@ -1,20 +1,22 @@
 
-import { ResultsTable } from './ResultsTable'
-import { Header } from './Header'
 import { CustomSelect } from './common/Select'
-import { useDataContext } from '../DataContext'
-import {Spinner} from './common/Spinner'
+import { Header } from './common/Header'
+import { Outlet, useNavigate } from 'react-router-dom';
+import { useEffect, useState } from 'react'
+
 
 export const ShiuchAchimPage = () => {
-
-const { setSelected, resultData, isLoading} = useDataContext()
-const headerTitles = ["name", "email", "phone", "date", ""]
+  const [selected, setSelected] = useState("")
+  const navigate = useNavigate()
+  
+  useEffect(() => {
+    navigate(`/${selected}`)
+  }, [selected])
 
   return (
     <div className="p-8">
       <Header text="שיוך ילדים" />
       <CustomSelect setSelected={(value) => setSelected(value)} />
-      {isLoading ? <Spinner/>:null}
-      {resultData ? <ResultsTable results={resultData} headerTitles={headerTitles} /> : null}
+      <Outlet />
     </div>)
 }
