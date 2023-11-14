@@ -5,4 +5,4 @@ export type ShiuchInstanceType ={
     email:string,
     date?:string,
     city?:string
-}
+};

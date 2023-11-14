@@ -5,7 +5,7 @@ import { options } from '../../constants'
 
 
 
-export const CustomSelect = ({ setSelected, placeholder }: { setSelected: ( {label, value}:{value:string, label:string}) => void, placeholder?:string }) => {
+export const CustomSelect = ({ setSelected, placeholder }: { setSelected: ( value:string) => void, placeholder?:string }) => {
     const styles = {
         option: (styles: { key: string, props: Object }, { data, isDisabled, isFocused, isSelected }:{data:any, isDisabled:boolean, isFocused:boolean, isSelected:boolean}) => {
             return {

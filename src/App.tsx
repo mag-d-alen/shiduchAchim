@@ -8,20 +8,12 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import { ShiuchAchimPage } from "./components/ShiuchAchimPage";
-import { AcceptedShiuchRequests } from "./components/pages/AcceptedShiuchRequests";
-import { RejectedShiuchRequests } from "./components/pages/RejectedShiuchRequests";
-import { SuggestedShiuchim } from "./components/pages/SuggestedShiuchim";
-import { NewShiuchRequests } from "./components/pages/NewShiuchRequests";
-import {  kidsLoader, newRequestsLoader } from "./constants";
+import { newRequestsLoader } from "./constants";
+import { ErrorPage } from "./components/pages/ErrorPage";
 
 export const App = () => {
   const router = createBrowserRouter(createRoutesFromElements(
-    <Route path="/"  element={<ShiuchAchimPage />} >
-      <Route path="/new" index element={<NewShiuchRequests/>} loader={newRequestsLoader}  />
-      <Route path="/approved" index element={<AcceptedShiuchRequests/>} loader={newRequestsLoader} />
-      <Route path="/rejected" index element={<RejectedShiuchRequests/>} loader={newRequestsLoader} />
-      <Route path="/suggestions" index element={<SuggestedShiuchim />} loader={kidsLoader} />
-    </Route>))
+    <Route path="/" element={<ShiuchAchimPage />} loader={newRequestsLoader} errorElement={<ErrorPage/>} ></Route>))
   return <RouterProvider router={router} />
 }
 

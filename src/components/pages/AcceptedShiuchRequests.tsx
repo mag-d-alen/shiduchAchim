@@ -1,16 +1,16 @@
 
 
-import { useLoaderData } from 'react-router-dom'
-import { ResultsTable } from '../ResultsTable'
-import { Spinner } from '../common/Spinner'
+// import { useLoaderData } from 'react-router-dom'
+// import { ResultsTable } from '../ResultsTable'
+// import { Spinner } from '../common/Spinner'
 
-export const AcceptedShiuchRequests = () => {
-  const headerTitles = ["name", "email", "phone", "date", ""]
+// export const AcceptedShiuchRequests = () => {
+//   const headerTitles = ["name", "email", "phone", "date", ""]
 
-  const resultData = useLoaderData()
-  return (
-      <div className="p-8">
-        {resultData ? <ResultsTable results={resultData.new} headerTitles={headerTitles} /> : <Spinner/>} 
-      </div>)
-  }
+//   const resultData = useLoaderData()
+//   return (
+//       <div className="p-8">
+//         {resultData ? <ResultsTable results={resultData.new} headerTitles={headerTitles} /> : <Spinner/>} 
+//       </div>)
+//   }
   
