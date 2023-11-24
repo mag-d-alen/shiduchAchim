@@ -1,10 +1,10 @@
 import { ReactNode, useRef, useState } from "react"
-import { ToggleButton } from "./common/ToggleButton"
-import { ShiuchInstanceType } from "../types"
-import { TableRow, TableTd } from "./atoms/Table"
-import { Toggle } from "./atoms/Toggle"
+import { ToggleButton } from "./ToggleButton"
+import { DataType } from "../../types"
+import { TableRow, TableTd } from "../atoms/Table"
+import { Toggle } from "../atoms/Toggle"
 
-export const ResultRow = ({ result, children }: { result: ShiuchInstanceType, children: ReactNode }) => {
+export const ResultRow = ({ result, children }: { result: DataType, children: ReactNode }) => {
   const [active, setActive] = useState(false)
   const [height, setHeight] = useState('0px')
   const [rotate, setRotate] = useState('transform duration-700 ease')
