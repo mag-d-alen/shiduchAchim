@@ -16,12 +16,14 @@ export const ShiuchAchimPage = () => {
 
   const [selected, setSelected] = useState("")
   const data = useLoaderData() as { [key: string]: DataType[] };
-  const headerTitles = ["שם המבקש", "אימייל", "טלפון", "תאריך הבקשה", ""]
+  const headerTitles = ["שם המבקש", "אימייל", "טלפון", "תאריך הבקשה"]
+  const options = [{ value: "new", label: "new" }, { value: "approved", label: "approved" }, { value: "rejected", label: "rejected" }, { value: "kids", label: "suggestions" }]
+
 
   return (
     <div className="p-8">
       <Header text="שיוך ילדים" />
-      <CustomSelect setSelected={(value) => setSelected(value)} />
+      <CustomSelect setSelected={(value) => setSelected(value)} options={options} />
       {selected ?
         data ?
           <Table headerTitles={headerTitles}>

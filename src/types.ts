@@ -1,4 +1,4 @@
 export type DataType ={
 
-    [key:string] :string | number
+    [key:string] :any
 };

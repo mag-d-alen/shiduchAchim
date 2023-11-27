@@ -12,7 +12,7 @@ export const ResultRow = ({ result, children }: { result: DataType, children: Re
   const contentSpace = useRef<HTMLDivElement>(null)
   const displayResult = (({ id, ...rest }) => rest)(result)
 
-  function toggleDetails() {
+  const toggleDetails=()=> {
     setActive((prevState) => !prevState)
     // @ts-ignore
     setHeight(active ? '0px' : `${contentSpace.current.scrollHeight}px`)
@@ -22,8 +22,8 @@ export const ResultRow = ({ result, children }: { result: DataType, children: Re
   return (
     <>
       <TableRow>
-        {Object.values(displayResult).map(item =>
-          <TableTd key={item}>{item}</TableTd>)}
+        {Object.values(displayResult).map((item, i) =>
+          <TableTd key={item+i}>{item}</TableTd>)}
         <TableTd>
           <ToggleButton clickHandler={toggleDetails} rotate={rotate} />
         </TableTd>

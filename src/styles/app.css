@@ -69,3 +69,28 @@
   color: #306FB6;
 }
 
+@keyframes inAnimation {
+  0% {
+    opacity: 0;
+    height: 0;
+    /* visibility: hidden; */
+  }
+  100% {
+    opacity: 1;
+    height:fit-content;
+    /* visibility: visible; */
+  }
+}
+
+@keyframes outAnimation {
+  0% {
+    opacity: 1;
+    height: fit-content;
+  }
+  100% {
+    opacity: 0;    /* visibility: hidden; */
+
+    height: 0;
+    /* visibility: hidden; */
+  }
+}

@@ -4,7 +4,7 @@ import { twMerge } from 'tailwind-merge'
 
 
 const buttonConfig = cva(
-  'flex items-center justify-center font-medium  gap-x-2 outline-none disabled:cursor-not-allowed h-10 cursor-pointer transition-all duration-400 ease-out text-lg align-top rounded-full shadow-md w-40',
+  'flex items-center justify-center font-medium  gap-x-2 outline-none disabled:cursor-not-allowed h-fit cursor-pointer transition-all duration-400 ease-out text-lg rounded-full shadow-md w-40',
   {
     variants: {
       intent: {
@@ -19,12 +19,12 @@ const buttonConfig = cva(
       size: {
         sm: 'text-sm py-1 px-4',
         md: 'text-base py-2 px-6',
-        lg: 'text-base py-3 px-8',
+        lg: 'text-xl py-3 px-8',
       },
     },
     defaultVariants: {
       intent: 'primary',
-      size: 'md',
+      size: "md",
     },
   }
 )

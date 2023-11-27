@@ -18,7 +18,7 @@ type CompoundInputProps<T extends React.ElementType<typeof inputConfig>> = Input
 // define  variants
 
 const inputConfig = cva(
-    'box-border min-w-0 flex-shrink-0 bg-white flex justify-between font-medium items-center border-2 rounded-full outline-none text-slate-600 placeholder:text-grey-400 focus:ring-2 focus:ring-blue-500/10 ui-open:ring-2 ui-open:ring-blue-500/10 disabled:cursor-not-allowed disabled:text-grey-400 transition-all disabled:border-grey-300 disabled:bg-grey-50 rtl:font-afek disabled:grayscale',
+    'box-border min-w-0 flex-shrink-0 bg-white flex flex-1 justify-between font-medium items-center border-2 rounded-full outline-none text-slate-600 placeholder:text-grey-400 focus:ring-2 focus:ring-blue-500/10 ui-open:ring-2 ui-open:ring-blue-500/10 disabled:cursor-not-allowed disabled:text-grey-400 transition-all disabled:border-grey-300 disabled:bg-grey-50 rtl:font-afek disabled:grayscale',
     {
         variants: {
             intent: {
