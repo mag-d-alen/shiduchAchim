@@ -5,9 +5,10 @@ import { Table } from '../atoms/Table'
 import { useLoaderData } from 'react-router'
 import { DataType } from '../../types'
 import { ResultRow } from '../common/ResultRow'
-import { Modal, ModalBody } from '../common/Modal'
+import { Modal } from '../common/Modal'
 import { Input } from '../atoms/Input'
-import { PaymentDetails } from './PaymentDetails'
+import { PaymentDetails } from '../PaymentDetails'
+import { CreateInvoiceForm } from '../CreateInvoiceForm'
 
 export const OpenInvoicesPage = () => {
   const data = useLoaderData() as { [key: string]: any }[];
@@ -26,15 +27,8 @@ export const OpenInvoicesPage = () => {
                       <PaymentDetails data={result} />
                     </div>
                     <div className='flex flex-1 flex-row justify-center'>
-                      <Modal buttonText={"סגור הפקדה"} submitData={() => console.log("submit")}>
-                        <ModalBody>
-                          <h1>צור הפקדה חדשה שתסגור את ההפקדה {result.basic_data.id}</h1>
-                          <Input></Input>
-                          <Input></Input>
-                          <Input></Input>
-                          <Input></Input>
-                        </ModalBody>
-                      </Modal></div>
+                     <CreateInvoiceForm title={`צור הפקדה חדשה שתסגור את ההפקדה ${result.basic_data.id}`}/>
+                    </div>
                   </div>
                 </div>
               </ResultRow>)}

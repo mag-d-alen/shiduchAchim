@@ -27,13 +27,13 @@ export const ShiuchAchimPage = () => {
       {selected ?
         data ?
           <Table headerTitles={headerTitles}>
-            {data[selected].map(result => 
-            <ResultRow key={result.id} result={result}>
-              {selected == 'new' ? <div className='flex gap-8 px-4'>
-                <Button intent={"primary"}>accept</Button>
-                <Button intent={"destroy"}>reject</Button>
-              </div> : null}
-            </ResultRow>)}
+            {data[selected].map(result =>
+              <ResultRow key={result.id} result={result}>
+                {selected == 'new' ? <div className='flex gap-8 px-4'>
+                  <Button onClick={() => {}} intent="primary">{"אשר"}</Button>
+                  <Button onClick={() => { }} intent={"destroy"}>{"בטל"}</Button>
+                </div> : null}
+              </ResultRow>)}
           </Table>
           : <Spinner />
         : null}

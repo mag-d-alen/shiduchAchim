@@ -1,13 +1,16 @@
 import { cva } from "class-variance-authority";
-import React, { forwardRef, HTMLProps } from 'react';
+import React, { forwardRef, HTMLProps, useState } from 'react';
 import { twMerge } from 'tailwind-merge';
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
+
 
 // define interfaces
 
 type InputProps<T extends React.ElementType> = {
     intent: 'default' | 'error';
     size?: 'md' | 'lg';
-    type: 'text' | 'number' | 'password';
+    type: 'text' | 'number' | 'password' |'date';
     as?: T;
 } & Omit<HTMLProps<HTMLInputElement>, 'as'>;
 
@@ -43,8 +46,6 @@ const inputConfig = cva(
 export const Input  = forwardRef<HTMLInputElement, CompoundInputProps<any>>(
     ({ as: Component = 'input', intent, size, type = 'text', className, ...props }, ref) => {
         const inputClasses = twMerge(inputConfig({ intent, size }), className);
-
         return <Component type={type} className={inputClasses} ref={ref} {...props} />;
     }
 );
-

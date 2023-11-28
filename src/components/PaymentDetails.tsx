@@ -1,6 +1,6 @@
-import { Table, TableRow, TableTd } from '../atoms/Table'
-import { Button } from '../atoms/Button'
+import { Button } from './atoms/Button'
 import { useState } from 'react'
+import { Table, TableRow, TableTd } from './atoms/Table';
 
 const mountedStyle = { animation: "inAnimation 500ms ease-in-out" };
 const unmountedStyle = {
